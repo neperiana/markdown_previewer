@@ -12,15 +12,15 @@ class App extends Component {
         <div className="markdown-area">
           <h3>Markdown</h3>
           <textarea name="markdown-textarea">
-          The cat was playing in the garden.
+            The cat was playing in the garden.
           </textarea>
         </div>
         
         <div className="html-area">
-          <h3>HTML</h3>
-          <textarea name="html-textarea">
-          The cat was playing in the garden.
-          </textarea>
+          <div><h3>HTML</h3></div>
+          <div className="html-rendered">
+            <p><em>Hola! </em>The cat was playing in the garden.</p>
+          </div>
         </div>
 
         <div className="Footer">
