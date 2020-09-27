@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div className="Header">
+          <h2>Markdown Previewer</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <div className="markdown-area">
+          <h3>Markdown</h3>
+          <textarea name="markdown-textarea">
+          The cat was playing in the garden.
+          </textarea>
+        </div>
+        
+        <div className="html-area">
+          <h3>HTML</h3>
+          <textarea name="html-textarea">
+          The cat was playing in the garden.
+          </textarea>
+        </div>
+
+        <div className="Footer">
+          <p>Copyright 2020, camila. Thanks to <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> and <a href="https://type.fit/" title="Type.fit">Type.fit</a>.</p>
+        </div>
       </div>
     );
   }
