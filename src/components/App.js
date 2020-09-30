@@ -7,6 +7,14 @@ import './App.css';
 // Resources
 import example_md from '../resources';
 
+// Marked library 
+import marked from 'marked';
+
+// ALLOWS LINE BREAKS WITH RETURN BUTTON
+marked.setOptions({
+  breaks: true
+});
+
 class App extends Component {
   constructor(props) {
     super();
@@ -19,17 +27,18 @@ class App extends Component {
   }
   handleChange(event) {
     let input = event.target.value;
-    let html = input;
+    let html = marked(input);
     this.setState({
       input: input,
       html: html
     });
   }
   componentDidMount() {
-    console.log(example_md)
-    this.state = {
-      input: example_md
-    }
+    let html = marked(example_md);
+    this.setState({
+      input: example_md,
+      html: html
+    })
   }
   render() {
     return (
@@ -42,16 +51,15 @@ class App extends Component {
 
           <div className="markdown-area">
             <h3>Markdown</h3>
-            <textarea name="markdown-textarea" onChange={this.handleChange}>
-              {this.state.input}
-            </textarea>
+            <textarea name="markdown-textarea"
+                      value={this.state.input} 
+                      onChange={this.handleChange}
+            />
           </div>
           
           <div className="html-area">
             <div><h3>HTML</h3></div>
-            <div className="html-rendered">
-              <p><em> {this.state.html} </em></p>
-            </div>
+            <div className="html-rendered" dangerouslySetInnerHTML={{__html: this.state.html}}></div>
           </div>
 
         </div> 
