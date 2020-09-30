@@ -15,6 +15,8 @@ marked.setOptions({
   breaks: true
 });
 
+
+// Main App Component
 class App extends Component {
   constructor(props) {
     super();
@@ -49,18 +51,12 @@ class App extends Component {
 
         <div className="containers">
 
-          <div className="markdown-area">
-            <h3>Markdown</h3>
-            <textarea name="markdown-textarea"
-                      value={this.state.input} 
-                      onChange={this.handleChange}
-            />
-          </div>
+          <MarkdownContainer 
+            markdown={this.state.input} 
+            onChange={this.handleChange}
+          />
           
-          <div className="html-area">
-            <div><h3>HTML</h3></div>
-            <div className="html-rendered" dangerouslySetInnerHTML={{__html: this.state.html}}></div>
-          </div>
+          <HtmlContainer html={this.state.html}/>
 
         </div> 
 
@@ -71,5 +67,28 @@ class App extends Component {
     );
   }
 }
+
+const MarkdownContainer = props => {
+  return (
+      <div className="markdown-area">
+          <h3>Markdown</h3>
+          <textarea name="markdown-textarea"
+                  type='text'
+                  value={props.markdown} 
+                  onChange={props.onChange}
+          />
+      </div>
+  );
+};
+
+const HtmlContainer = props => {
+  return (
+      <div className="html-area">
+          <div><h3>HTML</h3></div>
+          <div className="html-rendered" dangerouslySetInnerHTML={{__html: props.html}}></div>
+      </div>
+  );
+};
+
 
 export default App;

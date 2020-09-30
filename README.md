@@ -5,16 +5,16 @@ A web application that allows you to write and preview markdown code. It is buil
 
 ## Project Status
 
-In development.
+Done!
 
 
 ## Access
 
-Once it's live, will be hotes in github pages.
+Can be seen in [github pages](https://neperiana.github.io/markdown_previewer/).
 
 ## Acknowledgment
 
-TBC
+Thanks to [marked](https://cdnjs.com/libraries/marked) library, that allows to parse markdown to html.
 
 
 ## License
