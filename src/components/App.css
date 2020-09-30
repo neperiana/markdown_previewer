@@ -1,0 +1,132 @@
+.App {
+  background-color: #c8d5b9;
+  height: 100vh;
+  width: 100vw;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header {
+  background-color: #68b0ab;
+  width: 100%;
+  height: 40px;
+  padding: 0px 10px;
+  color: white;
+}
+
+.containers {
+  height: 80%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 1000px) {
+  .containers {
+    height: 80%;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.markdown-area, .html-area {
+  width: 100%;
+  height: 47%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #68b0ab;
+  border-radius: 3%;  
+  color: #FFFFFF;
+}
+
+@media (min-width: 1000px) {
+  .markdown-area, .html-area {
+    width: 47%;
+    height: 100%;
+  }
+}
+
+
+textarea {
+  background-color: #faf3dd;
+  outline-color: #68b0ab;
+  border-color: #68b0ab;
+  border-radius: 0% 0% 0% 3%;
+  color: #696d7d;
+  height: 100%;
+  width: 100%;
+  resize: none;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  padding: 10px;
+}
+
+@media (min-width: 1000px) {
+  textarea  {
+    padding: 15px;
+  }
+}
+
+.html-rendered { 
+  position: relative; /* added */
+  background-color: #faf3dd;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #68b0ab;
+  border-radius: 0% 0% 0% 3%;
+  color: #696d7d;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;   
+  padding: 10px;
+  overflow:auto;
+  overflow-x: hidden;
+}
+
+.html-rendered p {
+  margin: 0;
+}
+
+@media (min-width: 1000px) {
+  .html-rendered  {
+    padding: 15px;
+  }
+}
+
+.Footer {
+  padding: 0px 0px 0px 20px;
+  width: 100%;
+  height: 40px;
+  background-color: #68b0ab;
+  color: #FFFFFF;  
+}
+
+/* Scrollbar CSS */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #faf3dd;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border: solid 1px #555;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
